@@ -359,6 +359,7 @@ open class Flightdeck {
             return false
         }
         
+        /// Check if eventsCollection in memory is from the current time period before checking for the event
         if eventsCollection.date == Calendar.current.component(component, from: Date()) {
             if eventsCollection.events.contains(event) {
                 return false
@@ -366,7 +367,8 @@ open class Flightdeck {
                 self.eventsTrackedBefore[period]?.events.append(event)
                 return true
             }
-            
+        
+        /// If eventsCollection in memory is old, empty the collection and set date to current time period
         } else {
             self.eventsTrackedBefore[period] = EventsTrackedBefore(date: Calendar.current.component(component, from: Date()))
             return true
@@ -392,8 +394,6 @@ open class Flightdeck {
         if let movedToBackgroundTime = self.movedToBackgroundTime {
 
             if Date().timeIntervalSince(movedToBackgroundTime) > 60  {
-                /// Not implemented: Session End event needs to be implemented as background operation on appTermindated() in future versions.
-                //self.trackAutomaticEvent("Session End")
                 self.eventsTrackedThisSession.removeAll()
                 self.previousEvent = nil
                 self.previousEventDateTimeUTC = nil
@@ -411,8 +411,6 @@ open class Flightdeck {
                 }
             }
         }
-        /// Not implemented: Automatic Session End event needs to be implemented as background operation in future versions.
-        // self.trackAutomaticEvent("Session End")
     }
     
 }
