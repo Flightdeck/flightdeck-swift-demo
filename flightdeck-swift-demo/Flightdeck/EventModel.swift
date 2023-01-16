@@ -8,7 +8,7 @@ import Foundation
 
 // MARK: - EVENT DATA MODEL
 struct Event: Codable {
-    let event, datetimeUTC, clientType, clientConfig, clientVersion: String
+    let clientType, clientConfig, clientVersion, event, datetimeUTC: String
     var datetimeLocal, timezone, language, properties, appVersion, appInstallDate, osName, osVersion, deviceManufacturer, deviceModel: String?
     var firstOfSession, firstOfDay, firstOfMonth: Bool?
     var previousEvent, previousEventDatetimeUTC: String?

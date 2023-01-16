@@ -18,9 +18,9 @@ open class Flightdeck {
     private let automaticEventsPrefix = "(FD) "
     private let projectId: String
     private let projectToken: String
-    private let trackUniqueEvents: Bool
-    private let trackAutomaticEvents: Bool
     private let addEventMetadata: Bool
+    private let trackAutomaticEvents: Bool
+    private let trackUniqueEvents: Bool
     
     private let logger = Logger()
     private let notificationCenter = NotificationCenter.default
@@ -39,9 +39,9 @@ open class Flightdeck {
     struct Config {
         var projectId: String
         var projectToken: String
+        var addEventMetadata: Bool
         var trackAutomaticEvents: Bool
         var trackUniqueEvents: Bool
-        var addEventMetadata: Bool
     }
     private static var config:Config?
     
@@ -60,17 +60,17 @@ open class Flightdeck {
         }
         self.projectId = config.projectId
         self.projectToken = config.projectToken
-        self.trackUniqueEvents = config.trackUniqueEvents
-        self.trackAutomaticEvents = config.trackAutomaticEvents
         self.addEventMetadata = config.addEventMetadata
-        self.clientConfig = "\(self.trackUniqueEvents ? 1 : 0)\(self.trackAutomaticEvents ? 1 : 0)\(self.trackAutomaticEvents ? 1 : 0)"
+        self.trackAutomaticEvents = config.trackAutomaticEvents
+        self.trackUniqueEvents = config.trackUniqueEvents
+        self.clientConfig = "\(self.addEventMetadata ? 1 : 0)\(self.trackAutomaticEvents ? 1 : 0)\(self.trackUniqueEvents ? 1 : 0)"
         /**
             sdkConfig
          
             Position 1: 1 = iOS SDK
-            Position 2: trackUniqueEvents true/false (1 or 0)
+            Position 2: addEventMetadata true/false (1 or 0)
             Position 3: trackAutomaticEvents true/false  (1 or 0)
-            Position 4:trackAutomaticEvents true/false  (1 or 0)
+            Position 4: trackUniqueEvents true/false  (1 or 0)
          **/
         
         /// Observe app state changes
@@ -108,24 +108,24 @@ open class Flightdeck {
      
      - parameter projectId:             Project ID
      - parameter projectToken:          Project write API token
+     - parameter addEventMetadata:      Enable default metadata to be added to each event
      - parameter trackAutomaticEvents:  Enable tracking automatic events
      - parameter trackUniqueEvents:     Enable tracking daily and monthly unique events (session uniqueness is always tracked)
-     - parameter addEventMetadata:      Enable default metadata to be added to each event
      
      */
     class public func initialize(
         projectId: String,
         projectToken: String,
-        trackUniqueEvents: Bool = true,
+        addEventMetadata: Bool = true,
         trackAutomaticEvents: Bool = true,
-        addEventMetadata: Bool = true
+        trackUniqueEvents: Bool = false
     ){
         Flightdeck.config = Config(
             projectId: projectId,
             projectToken: projectToken,
+            addEventMetadata: addEventMetadata,
             trackAutomaticEvents: trackAutomaticEvents,
-            trackUniqueEvents: trackUniqueEvents,
-            addEventMetadata: addEventMetadata
+            trackUniqueEvents: trackUniqueEvents
         )
         
         // Call shared instance to start init()
