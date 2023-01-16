@@ -11,6 +11,8 @@
 		075B0F272970960E00FAED10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075B0F262970960E00FAED10 /* ContentView.swift */; };
 		075B0F292970960F00FAED10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075B0F282970960F00FAED10 /* Assets.xcassets */; };
 		075B0F2D2970960F00FAED10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075B0F2C2970960F00FAED10 /* Preview Assets.xcassets */; };
+		075B0F3D2970AEF300FAED10 /* Flightdeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075B0F3C2970AEF300FAED10 /* Flightdeck.swift */; };
+		075B0F3F2970AF1B00FAED10 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075B0F3E2970AF1B00FAED10 /* EventModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		075B0F282970960F00FAED10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075B0F2A2970960F00FAED10 /* flightdeck_swift_demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = flightdeck_swift_demo.entitlements; sourceTree = "<group>"; };
 		075B0F2C2970960F00FAED10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		075B0F3C2970AEF300FAED10 /* Flightdeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flightdeck.swift; sourceTree = "<group>"; };
+		075B0F3E2970AF1B00FAED10 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		075B0F232970960E00FAED10 /* flightdeck-swift-demo */ = {
 			isa = PBXGroup;
 			children = (
+				075B0F3B2970AEE100FAED10 /* Flightdeck */,
 				075B0F242970960E00FAED10 /* flightdeck_swift_demoApp.swift */,
 				075B0F262970960E00FAED10 /* ContentView.swift */,
 				075B0F282970960F00FAED10 /* Assets.xcassets */,
@@ -67,6 +72,15 @@
 				075B0F2C2970960F00FAED10 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		075B0F3B2970AEE100FAED10 /* Flightdeck */ = {
+			isa = PBXGroup;
+			children = (
+				075B0F3C2970AEF300FAED10 /* Flightdeck.swift */,
+				075B0F3E2970AF1B00FAED10 /* EventModel.swift */,
+			);
+			path = Flightdeck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +99,8 @@
 			dependencies = (
 			);
 			name = "flightdeck-swift-demo";
+			packageProductDependencies = (
+			);
 			productName = "flightdeck-swift-demo";
 			productReference = 075B0F212970960E00FAED10 /* flightdeck-swift-demo.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +129,8 @@
 				Base,
 			);
 			mainGroup = 075B0F182970960E00FAED10;
+			packageReferences = (
+			);
 			productRefGroup = 075B0F222970960E00FAED10 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075B0F3D2970AEF300FAED10 /* Flightdeck.swift in Sources */,
 				075B0F272970960E00FAED10 /* ContentView.swift in Sources */,
+				075B0F3F2970AF1B00FAED10 /* EventModel.swift in Sources */,
 				075B0F252970960E00FAED10 /* flightdeck_swift_demoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +220,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -251,6 +272,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -279,7 +301,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -287,7 +309,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cc.flightdeck.swift.flightdeck-swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +341,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -325,7 +349,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cc.flightdeck.swift.flightdeck-swift-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
