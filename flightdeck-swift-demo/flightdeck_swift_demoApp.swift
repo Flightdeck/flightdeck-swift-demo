@@ -12,7 +12,10 @@ struct Flightdeck_DemoApp: App {
     init() {
         Flightdeck.initialize(
             projectId: "flightdeck_demo",
-            projectToken: "p.eyJ1IjogIjVhZjBlOWZlLTA3MTEtNDNiMi1hZmNkLTY3MzZhYjBhM2Q5MiIsICJpZCI6ICI1NGZiYzYwNi1mMGRmLTQ1MjctOTYwZi1lMmRlYWQ3ZjRhZTkifQ.cYVMYgDu3mGU-5Utka95VWXFSx6wuPKNYeacfSUtW8Y"
+            projectToken: "p.eyJ1IjogIjVhZjBlOWZlLTA3MTEtNDNiMi1hZmNkLTY3MzZhYjBhM2Q5MiIsICJpZCI6ICI1NGZiYzYwNi1mMGRmLTQ1MjctOTYwZi1lMmRlYWQ3ZjRhZTkifQ.cYVMYgDu3mGU-5Utka95VWXFSx6wuPKNYeacfSUtW8Y",
+            addEventMetadata: true,
+            trackAutomaticEvents: true,
+            trackUniqueEvents: true
         )
     }
     
